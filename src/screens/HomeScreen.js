@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  FlatList,
-  Pressable,
-  Image,
-} from 'react-native'
+import { StyleSheet, View, Text, Pressable, Image } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -18,37 +10,109 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 function HomeScreen({ navigation }) {
   return (
     <>
-      <Image source={{}} />
+      <View style={{ flexDirection: 'row', backgroundColor: '#540368' }}>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={{
+            height: 100,
+            width: 100,
+          }}
+        />
+        <View style={{ flex: 1 }}>
+          <Text
+            style={{
+              color: '#fdf22b',
+              paddingHorizontal: 5,
+              paddingBottom: 5,
+            }}
+          >
+            NO MORE SILENCE, NOT ON OUR WATCH!
+          </Text>
+          <Text
+            style={{
+              color: '#fdf22b',
+              paddingHorizontal: 5,
+            }}
+          >
+            SUICIDE NOW CAUSES MORE YOUTH DEATHS THAN DOES ANY PHYSICAL DISEASE.
+          </Text>
+        </View>
+      </View>
+
       <View style={styles.title}>
-        <Text style={{ textAlign: 'center', color: '#fdf22b' }}>
-          NO MORE SILENCE, NOT ON OUR WATCH!
-        </Text>
-        <Text
-          style={{ paddingVertical: 5, textAlign: 'center', color: '#fdf22b' }}
-        >
-          SUICIDE NOW CAUSES MORE YOUTH DEATHS THAN DOES ANY PHYSICAL DISEASE.
-        </Text>
-        <Text
-          style={{ paddingBottom: 5, textAlign: 'center', color: '#fdf22b' }}
-        >
-          WELL NO MORE, NOT ON OUR WATCH!
-        </Text>
         <Text style={{ textAlign: 'center', color: '#fdf22b' }}>
           LET’S BE THE GENERATION TO DEMAND ACTION & END THE SILENCE & STIGMA
           FOR GOOD!
         </Text>
         <View>
-          <Text style={{ marginTop: 25, color: '#fdf22b' }}>WHAT WE DO</Text>
+          <Text style={{ marginTop: 15, color: '#fdf22b' }}>WHAT WE DO:</Text>
           <Text style={{ paddingBottom: 5, color: '#fdf22b' }}>
             FIND HELP, MAKE FRIENDS, JOIN THE FIGHT!
           </Text>
+          <Text style={{ paddingBottom: 5, color: '#fdf22b' }}>
+            No matter where you are in your journey with mental health, you
+            belong here and we have something to offer you. Find out where to
+            start:
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{ flex: 20, paddingHorizontal: 15, backgroundColor: '#540368' }}
+      >
+        <View
+          style={{
+            flexDirection: 'row',
+            paddingVertical: 5,
+            alignItems: 'center',
+          }}
+        >
+          <Image
+            style={{ height: 75, flex: 1 }}
+            source={require('../../assets/help.jpeg')}
+          />
           <Text
-            style={{ paddingBottom: 5, textAlign: 'center', color: '#fdf22b' }}
+            style={{
+              flex: 2,
+              color: '#fdf22b',
+              padding: 5,
+              paddingBottom: 35,
+            }}
           >
-            END THE SILENT EPIDEMIC has 3 distinct pillars. No matter where you
-            are in your journey with mental health or suicide, you belong here
-            and we have something to offer you. Find out where to start by
-            choosing which of the following statements applies to you:
+            MENTAL HEALTH EDUCATION
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            paddingVertical: 5,
+            alignItems: 'center',
+          }}
+        >
+          <Image
+            style={{ height: 75, flex: 1 }}
+            source={require('../../assets/activism.png')}
+          />
+          <Text
+            style={{ flex: 2, color: '#fdf22b', padding: 5, paddingBottom: 35 }}
+          >
+            MENTAL HEALTH ACTIVISM
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            paddingVertical: 5,
+            alignItems: 'center',
+          }}
+        >
+          <Image
+            style={{ height: 75, flex: 1 }}
+            source={require('../../assets/friends.jpeg')}
+          />
+          <Text
+            style={{ flex: 2, color: '#fdf22b', padding: 5, paddingBottom: 35 }}
+          >
+            RESOURCE HUB
           </Text>
         </View>
       </View>
@@ -81,14 +145,16 @@ function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   title: {
-    flex: 10,
+    flex: 6.5,
     textAlign: 'center',
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    paddingTop: 10,
     backgroundColor: '#540368',
   },
   BottomNav: {
     position: 'relative',
-    flex: 1,
+    flex: 4,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
